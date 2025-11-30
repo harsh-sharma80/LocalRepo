@@ -6,8 +6,9 @@ git commit -m "<message>"
 git restore <file>   #discard all changes in a file
 git restore --staged <file> #back to local/unstage; modifications remain
 git push origin main 
-git push -u origin main 
+git push -u origin main -> git push #set upstream so that we dont have to write origin main everytime
 git init    #initialize a repo on github
+git remote add origin <link>
 git remote -v
 git branch
 git branch -M <name>    #rename a branch
