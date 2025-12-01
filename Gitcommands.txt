@@ -12,3 +12,6 @@ git remote add origin <link>
 git remote -v
 git branch
 git branch -M <name>    #rename a branch
+git checkout -b <newbranchname> #create a new branch
+git checkout <branchname>   #switch branch
+git branch -d <branchname>  #delete a branch *if(current branch != delete branch)
