@@ -19,3 +19,11 @@ git diff <branchname>   #to compare branches, commits, files and more with the c
 git merge <branchname>  #to merge branches
 merge through PR GUI of github
 git pull origin <branch>    #pull remote update to local
+
+git reset <filename>    #reset the staged file
+git reset   #reset all staged files
+git reset --hard <commitHash>   #reset staged file from github + editor simultaneously
+
+git reset HEAD~1   #reset last one commit of file
+git log     #gives commit log with their hash
+git reset <commitHash>  #go back to a particular commit eg. 6->2 
