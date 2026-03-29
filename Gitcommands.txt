@@ -6,9 +6,11 @@ git config --list
 git clone <github repo link>
 git add <filename1> <file2> ...
 git add .                                           # stage all untracked/modified files
-git commit -m "<message>"
+git commit -m "<message>"t
+
 git restore <file>                                  #discard all changes in a file
-git restore --staged <file>                         #back to local/unstage; modifications remain
+git restore --staged <file>                         #unstage a file
+
 git push origin main 
 git push -u origin main -> git push                 #set upstream so that we dont have to write origin main everytime
 
