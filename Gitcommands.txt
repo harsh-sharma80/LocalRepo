@@ -1,9 +1,13 @@
-init -> add -> commit -> push
-
-git status
+git config --global user.name "<name>"
+git config --global user.email "<email>"
 git config --list
 
-git clone <github repo link>
+init -> add -> commit -> push
+
+git clone <github repo link>                        #to clone a remote repo to local
+
+git status
+
 git add <filename1> <file2> ...
 git add .                                           # stage all untracked/modified files
 git commit -m "<message>"t
