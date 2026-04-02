@@ -4,7 +4,13 @@ git config --list
 
 init -> add -> commit -> push
 
-git clone <github repo link>                        #to clone a remote repo to local
+git init                                            #initialize a repo on github
+git remote add origin <link>                        # add a remote repo [connect local code to github]
+git remote -v                                       #show remote url of repo
+git clone <github repo link>                        #to clone a remote repo to local [downloads the code to local]
+
+git push origin main 
+git push -u origin main -> git push                 #set upstream so that we dont have to write origin main everytime
 
 git status
 
@@ -15,26 +21,48 @@ git commit -m "<message>"t
 git restore <file>                                  #discard all changes in a file
 git restore --staged <file>                         #unstage a file
 
-git push origin main 
-git push -u origin main -> git push                 #set upstream so that we dont have to write origin main everytime
+git branch                                          #show all branches
+git branch <branchname>                             #create a new branch
+git branch -m old-branch new-branch                 # rename, fails if new-branch exists
+git branch -M old-branch new-branch                 # rename, overwrites if new-branch exists
 
-git init                                            #initialize a repo on github
-git remote add origin <link>
-git remote -v
-git branch
-git branch -M <name>                                #rename a branch
-git checkout -b <newbranchname>                     #create a new branch
-git checkout <branchname>                           #switch branch
-git branch -d <branchname>                          #delete a branch *if(current branch != delete branch)
-git diff <branchname>                               #to compare branches, commits, files and more with the current b,c,f
-git merge <branchname>                              #to merge branches
+git switch <branchname>                             #switch branch only if exists
+git switch -c <branchname>                          #switch if exists; else create and switch
+
+git merge <branchname>                              #to merge specified branch to current branch
+git merge --abort
 merge through PR GUI of github
+
+git branch -d <branchname>                          #delete a branch *if(current branch != delete branch)
+
+git diff <branchname>                               #to compare branches, commits, files and more with the current b,c,f
+
 git pull origin <branch>                            #pull remote update to local
+
 
 git reset <filename>                                #reset the staged file
 git reset                                           #reset all staged files
-git reset --hard <commitHash>                       #reset staged file from github + editor simultaneously
-
+git reset --hard <commitHash>                       #reset staged file from github + editor simultaneously (no coming back)
 git reset HEAD~1                                    #reset last one commit of file
+git reset --hard HEAD~2                             #reset the code as before last 2 updates
+
 git log                                             #gives commit log with their hash
+git log --online
+git reflog                                          #history of commits similar to log
+git reflog <commit_hash>                            #to see a specific commit
+
 git reset <commitHash>                              #go back to a particular commit eg. 6->2 
+
+.gitignore ->                a file which contains names of the files/folders to be untracked
+.gitkeep ->                  to untrack all empty files and folders across the table.
+
+git stash                   #to save modifications temporarily, incase we need to change branch but do not want to add or commit.
+
+clone ->                     copy repo locally
+fork ->                      copy someone's repo to github account
+
+open the original project repo on github and click fork.
+fork -> clone -> change -> push -> pull request
+git remote add upstream git@<orignal repo link>                 #keeps the fork synced with og repo
+git fetch upstream                                              #to make sure repo is synced with og before we make any change
+git merge upstream/main                                         #
